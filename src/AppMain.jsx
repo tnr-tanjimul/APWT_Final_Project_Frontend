@@ -33,6 +33,8 @@ import SubZone from "./Components/Pages/SubZone";
 import SubZoneRemove from "./Components/Pages/SubZoneRemove";
 import ZoneAdd from "./Components/Pages/ZoneAdd";
 import SubZoneAdd from "./Components/Pages/SubZoneAdd";
+import Company from "./Components/Pages/Company";
+import CompanyRemove from "./Components/Pages/CompanyRemove";
 
 function AppMain() {
     return (
@@ -144,6 +146,20 @@ function AppMain() {
                            <SubZoneAdd></SubZoneAdd>
                         </Route>
                         <Route exact path="/sub-zone/edit/:id">
+                           <MikrotikEdit/>
+                        </Route>
+
+
+                        <Route exact path="/company">
+                           <Company></Company>
+                        </Route>
+                        <Route exact path="/company/delete/:id">
+                          <CompanyRemove></CompanyRemove>
+                        </Route>
+                        <Route exact path="/company/add">
+                           <ZoneAdd></ZoneAdd>
+                        </Route>
+                        <Route exact path="/company/edit/:id">
                            <MikrotikEdit/>
                         </Route>
 
