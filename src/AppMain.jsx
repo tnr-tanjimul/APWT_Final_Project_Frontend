@@ -31,6 +31,8 @@ import Zone from "./Components/Pages/Zone";
 import ZoneRemove from "./Components/Pages/ZoneRemove";
 import SubZone from "./Components/Pages/SubZone";
 import SubZoneRemove from "./Components/Pages/SubZoneRemove";
+import ZoneAdd from "./Components/Pages/ZoneAdd";
+import SubZoneAdd from "./Components/Pages/SubZoneAdd";
 
 function AppMain() {
     return (
@@ -125,7 +127,7 @@ function AppMain() {
                           <ZoneRemove></ZoneRemove>
                         </Route>
                         <Route exact path="/zone/add">
-                           <AddMikrotik/>
+                           <ZoneAdd></ZoneAdd>
                         </Route>
                         <Route exact path="/zone/edit/:id">
                            <MikrotikEdit/>
@@ -139,7 +141,7 @@ function AppMain() {
                           <SubZoneRemove></SubZoneRemove>
                         </Route>
                         <Route exact path="/sub-zone/add">
-                           <AddMikrotik/>
+                           <SubZoneAdd></SubZoneAdd>
                         </Route>
                         <Route exact path="/sub-zone/edit/:id">
                            <MikrotikEdit/>

@@ -17,7 +17,7 @@ const AuthLogin = ()=>{
 
     const loginSubmit= ()=>{
         var obj = {username: name, password: password};
-        axios.post("http://127.0.0.1:8000/api/login",obj)
+        axios.post("login",obj)
         .then(resp=>{
             var token = resp.data;
             console.log(token);

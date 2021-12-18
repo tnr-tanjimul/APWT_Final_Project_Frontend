@@ -43,7 +43,7 @@ const SubZone = (props) => {
 
                             <div className="row">
                                 <div className="col-12">
-                                    <h1 ><Link className="btn btn-primary" to={"zone/add"}>Add Sub Zone</Link></h1>
+                                    <h1 ><Link className="btn btn-primary" to={"sub-zone/add"}>Add Sub Zone</Link></h1>
                                     {/* <h1 className="btn btn-primary">Add Server</h1> */}
                                     <div className="card">
 
