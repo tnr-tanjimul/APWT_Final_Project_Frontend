@@ -104,7 +104,7 @@ const AuthRegistration = ()=>{
                         {/* end form*/}
                         {/* Footer*/}
                         <footer className="footer footer-alt">
-                            <p className="text-muted">Already have account? <Link to="/Auth/Login" className="text-muted ml-1"><b>Log In</b></Link></p>
+                            <p className="text-muted">Already have account? <Link to="/login" className="text-muted ml-1"><b>Log In</b></Link></p>
                         </footer>
 
                     </div> {/* end .card-body */}
