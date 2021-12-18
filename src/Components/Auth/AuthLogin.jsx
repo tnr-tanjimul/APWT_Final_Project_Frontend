@@ -19,15 +19,24 @@ const AuthLogin = ()=>{
         var obj = {username: name, password: password};
         axios.post("login",obj)
         .then(resp=>{
-            var token = resp.data;
-            console.log(token);
-            var user = {userId: token.userid, access_token:token.token};
-            localStorage.setItem('user',JSON.stringify(user));
-            handleRedirect();
+
+            if(resp.data.status === 401){
+                alert(resp.data.message);
+            }
+            else{
+                var token = resp.data;
+                console.log(token);
+                var user = {userId: token.userid, access_token:token.token};
+                localStorage.setItem('user',JSON.stringify(user));
+                handleRedirect();
+            }
+            
             
             // console.log(localStorage.getItem('user'));
         }).catch(err=>{
             console.log(err);
+            alert(err);
+
         });
 
 

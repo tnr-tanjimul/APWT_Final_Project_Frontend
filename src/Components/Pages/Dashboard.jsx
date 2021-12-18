@@ -54,13 +54,14 @@ function Dashboard() {
                     <div className="row">
                         <div className="col-12">
                         </div>
-                        <DashItem classColor="info" icon="fe-message-square" text="Total Messages" count="17"></DashItem>
-                        <DashItem classColor="success" icon="fe-message-square" text="Success" count="9"></DashItem>
-                        <DashItem classColor="warning" icon="fe-message-square" text="Failed" count="8"></DashItem>
-                        <DashItem classColor="success" icon="fe-heart" text="Balance" count="170"></DashItem>
-                        <DashItem classColor="pink" icon="fe-bar-chart-line" text="Groups" count="6"></DashItem>
-                        <DashItem classColor="info" icon="mdi mdi-view-dashboard-outline" text="Templates" count="2"></DashItem>
-                        
+                        <DashItem classColor="info" icon="fe-users" text="All Clients" count="200"></DashItem>
+                        <DashItem classColor="success" icon="fe-user-check" text="Active Client" count="190"></DashItem>
+                        <DashItem classColor="warning" icon="fe-user-x" text="Inactive Client" count="500"></DashItem>
+                        <DashItem classColor="danger" icon="fe-user-minus" text="Left/Pending Client" count="170"></DashItem>
+                        <DashItem classColor="pink" icon="fe-shopping-cart" text="Personal Invoice" count="128"></DashItem>
+                        <DashItem classColor="info" icon="fe-bar-chart" text="Personal Invoice Amount" count="200"></DashItem>
+                        <DashItem classColor="primary" icon="fe-heart" text="Personal Balance" count="200"></DashItem>
+                        <DashItem classColor="warning" icon="fe-eye" text="Personal Commission" count="200"></DashItem>
                     </div>
                     {/* end row*/}
                 </div>

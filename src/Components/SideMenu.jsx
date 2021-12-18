@@ -131,9 +131,9 @@ function SideMenu() {
                 </Link></li>
                 <li className="menu-title mt-2">Configuration</li>
 
-                <li><Link to="/retailer-add.">
+                <li><Link to="/company">
                     <i className="mdi mdi-account-convert"></i>
-                    <span> Retailer </span>
+                    <span> Company </span>
                 </Link></li>
                 <li><Link to="/merchant_payments">
                     <i className="mdi mdi-credit-card-clock"></i>

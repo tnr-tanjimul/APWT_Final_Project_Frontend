@@ -27,7 +27,7 @@ const AddWatchDog = (props) => {
 
       const AddSubmit= ()=>{
             var obj = {name: name, companyId: companyId, ip: ip, port:port, status: status, macAddress: macAddress, type: type};
-            axios.post("http://127.0.0.1:8000/api/watchdog/add",obj)
+            axios.post("watchdog/add",obj)
             .then(resp=>{
                 var token = resp.data;
 
@@ -96,6 +96,8 @@ const AddWatchDog = (props) => {
                                                                                     <option value="InActive">InActive</option>
                                                                               </select>
                                                                         </div>
+
+                                                                        
                                                                         <div className="col-md-6">
                                                                               <label className="form-label">Mac Address</label>
                                                                               <input type="text" value={macAddress} onChange={(e)=>setMacAddress(e.target.value)} className="form-control" name="macAddress" id="macAddress"/>

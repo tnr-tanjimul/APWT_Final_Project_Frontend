@@ -39,7 +39,7 @@ const PPPOEUsers = (props) => {
 
                             {/* start page title */}
 
-                            <BreadcrumbNav page="Users" title="Hotspot"></BreadcrumbNav>
+                            <BreadcrumbNav page="PPPoE" title="Users"></BreadcrumbNav>
 
                             <div className="row">
                                 <div className="col-12">
@@ -53,15 +53,15 @@ const PPPOEUsers = (props) => {
                                                 <thead>
                                                     <tr>
                                                         <th></th>
-                                                        <th className="pointer" title="Click to sort">C.ID</th>
+                                                       
+                                                        <th className="pointer" title="Click to sort">Server</th>
                                                         <th className="pointer" title="Click to sort">Name</th>
                                                         <th className="pointer" title="Click to sort">Password</th>
-                                                        <th className="pointer" title="Click to sort">Server</th>
+                                                      
                                                         <th className="pointer" title="Click to sort">Profile</th>
                                                         <th className="pointer" title="Click to sort">Mac Address</th>
-                                                        <th className="pointer" title="Click to sort">Up time</th>
-                                                        <th className="pointer" title="Click to sort">IN</th>
-                                                        <th className="pointer" title="Click to sort">Out</th>
+                                                        <th className="pointer" title="Click to sort">Logout Reason</th>
+                                                       
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -71,18 +71,19 @@ const PPPOEUsers = (props) => {
                                                         apiData.map(p => (
                                                             <tr key={p.id}>
                                                                 <td>
-                                                                    <Link className="fa fa-minus-square text-danger pointer" to={"/hotspot/users/remove/"+p.id} title="Remove 01790381402"></Link>                                                                    
+                                                                    <Link className="fa fa-minus-square text-danger pointer" to={"/hotspot/users/remove/"+p.id} title="Remove 01790381402"></Link>
+
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;                                                                   
                                                                     <Link className="fa fa-unlock pointer" to={"/hotspot/users/remove/"+p.id}></Link>
                                                                 </td>
-                                                                <td>{p.id}</td>
+                                                                <td>{p.serverName}</td>
                                                                 <td>{p.name}</td>
                                                                 <td>{p.password}</td>
-                                                                <td>{p.serverName}</td>
+                                                               
                                                                 <td>{p.profile}</td>
-                                                                <td>{p.macAddress}</td>
-                                                                <td>{p.uptime}</td>
-                                                                <td>{p.bytesIn}</td>
-                                                                <td>{p.bytesOut}</td>
+                                                                <td>{p.callerId}</td>
+                                                                <td>{p.LastDisconnectReason}</td>
+                                                               
                                                             </tr>
                                                         ))
                                                     }
