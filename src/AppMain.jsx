@@ -1,10 +1,6 @@
-import LeftSideBar from "./Components/LeftSidebar";
 import Dashboard from "./Components/Pages/Dashboard";
-import RightSidebar from "./Components/RightSidebar";
-import TopBar from "./Components/TopBar";
 import { BrowserRouter as Router, Route, Switch,useParams } from 'react-router-dom'
 
-import Contact from "./Components/Pages/Contact";
 import AuthLogin from "./Components/Auth/AuthLogin";
 import AuthRegistration from "./Components/Auth/AuthRegistration";
 import DHCPLease from "./Components/Pages/DHCPLease";
@@ -33,6 +29,8 @@ import PPPOEProfileRemove from "./Components/Pages/PPPOEProfileRemove";
 import PPPPOEOnlineRemove from "./Components/Pages/PPPOEOnlineRemove";
 import Zone from "./Components/Pages/Zone";
 import ZoneRemove from "./Components/Pages/ZoneRemove";
+import SubZone from "./Components/Pages/SubZone";
+import SubZoneRemove from "./Components/Pages/SubZoneRemove";
 
 function AppMain() {
     return (
@@ -126,10 +124,24 @@ function AppMain() {
                         <Route exact path="/zone/delete/:id">
                           <ZoneRemove></ZoneRemove>
                         </Route>
-                        <Route exact path="/server/add">
+                        <Route exact path="/zone/add">
                            <AddMikrotik/>
                         </Route>
-                        <Route exact path="/server/edit/:id">
+                        <Route exact path="/zone/edit/:id">
+                           <MikrotikEdit/>
+                        </Route>
+
+                        {/* Mikrotik */}
+                        <Route exact path="/sub-zone">
+                           <SubZone></SubZone>
+                        </Route>
+                        <Route exact path="/sub-zone/delete/:id">
+                          <SubZoneRemove></SubZoneRemove>
+                        </Route>
+                        <Route exact path="/sub-zone/add">
+                           <AddMikrotik/>
+                        </Route>
+                        <Route exact path="/sub-zone/edit/:id">
                            <MikrotikEdit/>
                         </Route>
 
