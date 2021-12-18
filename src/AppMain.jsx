@@ -14,6 +14,7 @@ import HotspotUsersOnline from "./Components/Pages/HotspotUsersOnline";
 import HotspotProfiles from "./Components/Pages/HotspotProfiles";
 
 import HotspotProfileRemove from "./Components/Pages/HotspotProfileRemove";
+import Logout from "./Components/Pages/Logout";
 
 function AppMain() {
     return (
@@ -33,6 +34,10 @@ function AppMain() {
 
                         <Route exact path="/login">
                             <AuthLogin></AuthLogin>
+                        </Route>
+
+                        <Route exact path="/logout">
+                            <Logout></Logout>
                         </Route>
 
 
