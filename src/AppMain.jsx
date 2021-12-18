@@ -12,6 +12,15 @@ import HotspotUsers from "./Components/Pages/HotspotUsers";
 import HotspotUsersActive from "./Components/Pages/HotspotUsersActive";
 import HotspotUsersOnline from "./Components/Pages/HotspotUsersOnline";
 import HotspotProfiles from "./Components/Pages/HotspotProfiles";
+import WatchDog from "./Components/Pages/WatchDog";
+import { WatchDogDetails } from "./Components/Pages/WatchDogDetails";
+import AddWatchDog from "./Components/Pages/AddWatchDog";
+import WatchDogRemove from "./Components/Pages/WatchDogRemove";
+import WatchDogEdit from "./Components/Pages/WatchDogEdit";
+import Mikrotik from "./Components/Pages/Mikrotik";
+import MikrotikRemove from "./Components/Pages/MikrotikRemove";
+import AddMikrotik from "./Components/Pages/AddMikrotik";
+import MikrotikEdit from "./Components/Pages/MikrotikEdit";
 
 import HotspotProfileRemove from "./Components/Pages/HotspotProfileRemove";
 import Logout from "./Components/Pages/Logout";
@@ -74,6 +83,39 @@ function AppMain() {
                            <HotspotProfiles></HotspotProfiles>
                         </Route>
 
+
+                        {/* Watch_Dog */}
+                        <Route exact path="/watchdog">
+                           <WatchDog/>
+                        </Route>
+                        <Route exact path="/watchdog/add">
+                           <AddWatchDog/>
+                        </Route>
+                        <Route exact path="/watchdog/edit/:id">
+                           <WatchDogEdit/>
+                        </Route>
+                        
+                        <Route exact path="/watchdog/view/:id">
+                           <WatchDogDetails/>
+                        </Route>
+                        
+                        <Route exact path="/watchdog/delete/:id">
+                           <WatchDogRemove/>
+                        </Route>
+                        
+                        {/* Mikrotik */}
+                        <Route exact path="/server">
+                           <Mikrotik/>
+                        </Route>
+                        <Route exact path="/server/delete/:id">
+                           <MikrotikRemove/>
+                        </Route>
+                        <Route exact path="/server/add">
+                           <AddMikrotik/>
+                        </Route>
+                        <Route exact path="/server/edit/:id">
+                           <MikrotikEdit/>
+
                         <Route exact path="/hotspot/profiles/remove/:serverId/:name">
                             <HotspotProfileRemove></HotspotProfileRemove>
                         </Route>
@@ -100,6 +142,7 @@ function AppMain() {
 
                         <Route exact path="/pppoe/profiles/remove/:serverId/:name">
                             <PPPOEProfileRemove></PPPOEProfileRemove>
+
                         </Route>
 
                         
@@ -110,7 +153,7 @@ function AppMain() {
 
 
                 
-                {/* END wrapper */}
+               
             </>
         </Router>
     );
