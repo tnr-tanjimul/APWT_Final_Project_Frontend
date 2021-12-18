@@ -115,7 +115,8 @@ function AppMain() {
                         </Route>
                         <Route exact path="/server/edit/:id">
                            <MikrotikEdit/>
-
+                        </Route>
+                        
                         <Route exact path="/hotspot/profiles/remove/:serverId/:name">
                             <HotspotProfileRemove></HotspotProfileRemove>
                         </Route>
