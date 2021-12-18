@@ -53,7 +53,7 @@ function TopBar() {
                             <div className="dropdown-item noti-title">
                                 <h5 className="m-0">
                                     <span className="float-right">
-                                        <Link to="" className="text-dark">
+                                        <Link to="#" className="text-dark">
                                             <small>Clear All</small>
                                         </Link>
                                     </span>Notification
@@ -211,7 +211,7 @@ function TopBar() {
 
                     <li>
                         {/* Mobile menu toggle (Horizontal Layout)*/}
-                        <Link className="navbar-toggle nav-link" data-toggle="collapse" data-target="#topnav-menu-content">
+                        <Link to="#" className="navbar-toggle nav-link" data-toggle="collapse" data-target="#topnav-menu-content">
                             <div className="lines">
                                 <span></span>
                                 <span></span>
