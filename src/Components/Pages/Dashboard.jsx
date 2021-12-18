@@ -4,10 +4,14 @@ import RightSidebar from "../RightSidebar";
 import TopBar from "../TopBar";
 import DashItem from "./DashItem";
 import { Link } from "react-router-dom";
+import IsLoggegIn from "../IsLoggegIn";
+
 
 function Dashboard() {
+    
     return (
     <>
+    <IsLoggegIn></IsLoggegIn>
     <div id="wrapper">
         <TopBar></TopBar>
         <LeftSideBar></LeftSideBar>
