@@ -6,7 +6,7 @@ import BreadcrumbNav from "../BreadcrumbNav";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import  { Redirect } from 'react-router-dom';
-
+import { useHistory } from "react-router-dom";
 
 const AddWatchDog = (props) => {
 
@@ -17,11 +17,16 @@ const AddWatchDog = (props) => {
       let [status, setStatus] = useState("");
       let [macAddress, setMacAddress] = useState("");
       let [type, setType] = useState("");
-      let [isActive, setIsActive] = useState("");
+      
+
+      let history = useHistory();
+      function handleRedirect() {
+          history.push("/watchdog");
+      }
 
 
       const AddSubmit= ()=>{
-            var obj = {name: name, companyId: companyId, ip: ip, port:port, status: status, macAddress: macAddress, type: type, isActive: isActive};
+            var obj = {name: name, companyId: companyId, ip: ip, port:port, status: status, macAddress: macAddress, type: type};
             axios.post("http://127.0.0.1:8000/api/watchdog/add",obj)
             .then(resp=>{
                 var token = resp.data;
@@ -30,6 +35,8 @@ const AddWatchDog = (props) => {
                 alert(token.message);
                 
                 console.log(token);
+
+                handleRedirect();
                 
                 
             }).catch(err=>{
@@ -82,8 +89,12 @@ const AddWatchDog = (props) => {
                                                                         </div>
                                                                         
                                                                         <div className="col-md-6 mb-2">
-                                                                              <label className="form-label">Status</label>
-                                                                              <input type="number" value={status} onChange={(e)=>setStatus(e.target.value)} className="form-control" name="status"/>
+                                                                              <label className="form-label">Status</label><br/>
+                                                                              <select value={status} onChange={(e)=>setStatus(e.target.value)} className="form-select col-md-6" >
+                                                                                    <option value="DEFAULT" >Choose...</option>
+                                                                                    <option value="Active">Active</option>
+                                                                                    <option value="InActive">InActive</option>
+                                                                              </select>
                                                                         </div>
                                                                         <div className="col-md-6">
                                                                               <label className="form-label">Mac Address</label>
@@ -97,10 +108,7 @@ const AddWatchDog = (props) => {
                                                                                     <option value="BY MAC">By MAC</option>
                                                                               </select>
                                                                         </div>
-                                                                        <div className="col-md-6">
-                                                                              <label className="form-label">Active</label>
-                                                                              <input type="number" value={isActive} onChange={(e)=>setIsActive(e.target.value)} className="form-control" name="isActive" id="isActive"/>
-                                                                        </div>
+                                                                        
 
 
                                                                   </form>

@@ -6,7 +6,7 @@ import BreadcrumbNav from "../BreadcrumbNav";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import  { Redirect } from 'react-router-dom';
-
+import { useHistory } from "react-router-dom";
 
 const AddWatchDog = (props) => {
 
@@ -17,7 +17,10 @@ const AddWatchDog = (props) => {
       let [username, setUsername] = useState("");
       let [password, setPassword] = useState("");
 
-
+      let history = useHistory();
+      function handleRedirect() {
+          history.push("/server");
+      }
 
       const AddSubmit= ()=>{
             var obj = {name: name, ip: ip, port:port,  dnsName: dnsName, username: username, password: password};
@@ -25,11 +28,11 @@ const AddWatchDog = (props) => {
             .then(resp=>{
                 var token = resp.data;
 
-
+                
                 alert(token.message);
                 
                 console.log(token);
-                
+                handleRedirect();
                 
             }).catch(err=>{
                 console.log(err);

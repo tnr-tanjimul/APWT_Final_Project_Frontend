@@ -21,7 +21,7 @@ const MikrotikEdit = (props) => {
 
       const UpdateSubmit= ()=>{
             var obj = {name: name,  ip: ip, port:port, dnsName: dnsName, username: username, password: password};
-            axios.post("http://127.0.0.1:8000/api/server/edit/"+id,obj)
+            axios.post("server/edit/"+id,obj)
             .then(resp=>{
                 var token = resp.data;
 

@@ -31,6 +31,8 @@ import PPPOEUsersOnline from "./Components/Pages/PPPOEUsersOnline";
 import PPPOEProfiles from "./Components/Pages/PPPOEProfiles";
 import PPPOEProfileRemove from "./Components/Pages/PPPOEProfileRemove";
 import PPPPOEOnlineRemove from "./Components/Pages/PPPOEOnlineRemove";
+import Zone from "./Components/Pages/Zone";
+import ZoneRemove from "./Components/Pages/ZoneRemove";
 
 function AppMain() {
     return (
@@ -116,7 +118,21 @@ function AppMain() {
                         <Route exact path="/server/edit/:id">
                            <MikrotikEdit/>
                         </Route>
-                        
+
+                         {/* Mikrotik */}
+                         <Route exact path="/zone">
+                           <Zone></Zone>
+                        </Route>
+                        <Route exact path="/zone/delete/:id">
+                          <ZoneRemove></ZoneRemove>
+                        </Route>
+                        <Route exact path="/server/add">
+                           <AddMikrotik/>
+                        </Route>
+                        <Route exact path="/server/edit/:id">
+                           <MikrotikEdit/>
+                        </Route>
+
                         <Route exact path="/hotspot/profiles/remove/:serverId/:name">
                             <HotspotProfileRemove></HotspotProfileRemove>
                         </Route>

@@ -125,17 +125,17 @@ function SideMenu() {
                 </Link>
                 </li>
 
-                <li><Link to="traffic-monitor.php">
+                <li><Link to="/traffic-monitor">
                     <i className="mdi mdi-chart-areaspline"></i>
                     <span> Traffic Monitor </span>
                 </Link></li>
                 <li className="menu-title mt-2">Configuration</li>
 
-                <li><Link to="retailer-add.php">
+                <li><Link to="/retailer-add.">
                     <i className="mdi mdi-account-convert"></i>
                     <span> Retailer </span>
                 </Link></li>
-                <li><Link to="merchant_payments.php">
+                <li><Link to="/merchant_payments">
                     <i className="mdi mdi-credit-card-clock"></i>
                     <span> All Payments </span>
                 </Link></li>
@@ -148,8 +148,8 @@ function SideMenu() {
                     </a>
                     <div className="collapse" id="h_server">
                         <ul className="nav-second-level">
-                            <li><Link to="{{route('watchdog.index')}}">Watch Dog</Link></li>
-                            <li><Link to="{{route('server.index')}}">Mikrotik</Link></li>
+                            <li><Link to="/watchdog">Watch Dog</Link></li>
+                            <li><Link to="/server">Mikrotik</Link></li>
                         </ul>
                     </div>
                 </li>
@@ -162,8 +162,8 @@ function SideMenu() {
                     </a>
                     <div className="collapse" id="h_Configuration">
                         <ul className="nav-second-level">
-                            <li><Link to="{{route('zone.index')}}">Zone</Link></li>
-                            <li><Link to="{{route('sub-zone.index')}}">Sub Zone</Link></li>
+                            <li><Link to="/zone">Zone</Link></li>
+                            <li><Link to="/sub-zone">Sub Zone</Link></li>
                         </ul>
                     </div>
                 </li>
