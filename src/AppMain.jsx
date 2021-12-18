@@ -13,6 +13,8 @@ import HotspotUsersActive from "./Components/Pages/HotspotUsersActive";
 import HotspotUsersOnline from "./Components/Pages/HotspotUsersOnline";
 import HotspotProfiles from "./Components/Pages/HotspotProfiles";
 
+import HotspotProfileRemove from "./Components/Pages/HotspotProfileRemove";
+
 function AppMain() {
     return (
         <Router>
@@ -38,7 +40,7 @@ function AppMain() {
                             <AuthRegistration></AuthRegistration>
                         </Route>
 
-                        <Route exact path="/dhcp-lease">
+                        <Route exact path="/dhcp-leases">
                            <DHCPLease></DHCPLease>
                         </Route>
                         <Route exact path="/hotspot/users">
@@ -54,6 +56,10 @@ function AppMain() {
 
                         <Route exact path="/hotspot/profiles">
                            <HotspotProfiles></HotspotProfiles>
+                        </Route>
+
+                        <Route exact path="/hotspot/profiles/remove/:serverId/:name">
+                            <HotspotProfileRemove></HotspotProfileRemove>
                         </Route>
 
                         
