@@ -15,6 +15,7 @@ import HotspotProfiles from "./Components/Pages/HotspotProfiles";
 
 import HotspotProfileRemove from "./Components/Pages/HotspotProfileRemove";
 import Logout from "./Components/Pages/Logout";
+import HotspotOnlineRemove from "./Components/Pages/HotspotOnlineRemove";
 
 function AppMain() {
     return (
@@ -57,6 +58,10 @@ function AppMain() {
 
                         <Route exact path="/hotspot/online">
                            <HotspotUsersOnline></HotspotUsersOnline>
+                        </Route>
+
+                        <Route exact path="/hotspot/online/remove/:serverId/:name">
+                            <HotspotOnlineRemove></HotspotOnlineRemove>
                         </Route>
 
                         <Route exact path="/hotspot/profiles">

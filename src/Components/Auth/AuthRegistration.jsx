@@ -15,8 +15,6 @@ const AuthRegistration = ()=>{
         axios.post("http://127.0.0.1:8000/api/register",obj)
         .then(resp=>{
             var token = resp.data;
-
-
             alert(token.message);
             console.log(token);
             //var user = {userId: token.userid, access_token:token.token};
