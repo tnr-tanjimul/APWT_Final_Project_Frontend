@@ -2,7 +2,37 @@ import AuthLogo from "../AuthLogo";
 import AuthQuotes from "../AuthQuotes";
 import AuthSocialButton from "../AuthSocialButton";
 import { Link } from "react-router-dom";
-function AuthRegistration() {
+import axios from "axios";
+import React, {useState, userEffect} from "react";
+import  { Redirect } from 'react-router-dom'
+const AuthRegistration = ()=>{
+    let[name, setName] = useState("");
+    let[email, setEmail] = useState("");
+    let[password, setPassword] =useState("");
+
+    const RegisterSubmit= ()=>{
+        var obj = {name: name, email: email, password: password};
+        axios.post("http://127.0.0.1:8000/api/register",obj)
+        .then(resp=>{
+            var token = resp.data;
+
+
+            alert(token.message);
+            console.log(token);
+            //var user = {userId: token.userid, access_token:token.token};
+            //localStorage.setItem('user',JSON.stringify(user));
+
+            //return <Redirect to='/'  />
+
+
+
+            // console.log(localStorage.getItem('user'));
+        }).catch(err=>{
+            console.log(err);
+        });
+
+
+    }
     return (
         <div className="auth-fluid">
             {/*Auth fluid left content */}
@@ -18,11 +48,10 @@ function AuthRegistration() {
                         <p className="text-muted mb-4">Don't have an account? Create your account, it takes less than a minute</p>
 
                         {/* form */}
-                        <form action="/Auth/Registration" method="post">
+                        <div>
 
 
-                            <input name="__RequestVerificationToken" type="hidden" defaultValue="sBKFvC8UGCaQDQUD8Ekrx9y607TTYUGOKX-UZodOyKDeLpSPHbeE_XgZVo_dqrs7MVthHfD1NZVrSltzzsEVsG-qQb-IenUeJ_tsPJeX4dI1" />
-
+                           
                             <div className="form-group">
 
 
@@ -33,8 +62,8 @@ function AuthRegistration() {
 
                             <div className="form-group">
                                 <label htmlFor="Name">Full Name</label>
-                                <input className="form-control " type="text" name="Name" id="Name" placeholder="Enter your name" autoComplete="name" autoFocus />
-                                <span className="field-validation-valid text-danger" data-valmsg-htmlhtmlFor="Name" data-valmsg-replace="true"></span>
+                                <input className="form-control " value={name} onChange={(e)=>setName(e.target.value)} type="text" name="Name" id="Name" placeholder="Enter your name" autoComplete="name" autoFocus />
+                                <span className="field-validation-valid text-danger" data-valmsg-htmlhtmlfor="Name" data-valmsg-replace="true"></span>
 
                             </div>
 
@@ -42,14 +71,14 @@ function AuthRegistration() {
 
                             <div className="form-group">
                                 <label htmlFor="Email">Email address</label>
-                                <input className="form-control " type="text" name="Email" id="Email" placeholder="Enter your email" autoComplete="email" autoFocus />
-                                <span className="field-validation-valid text-danger" data-valmsg-htmlhtmlFor="Email" data-valmsg-replace="true"></span>
+                                <input className="form-control " value={email} onChange={(e)=>setEmail(e.target.value)} type="text" name="Email" id="Email" placeholder="Enter your email" autoComplete="email" autoFocus />
+                                <span className="field-validation-valid text-danger" data-valmsg-htmlhtmlfor="Email" data-valmsg-replace="true"></span>
                             </div>
                             <div className="form-group">
                                 <Link to="auth-recoverpw-2.php" className="text-muted float-right"><small>Forgot your password?</small></Link>
                                 <label htmlFor="Password">Password</label>
                                 <div className="input-group input-group-merge">
-                                    <input type="password" name="Password" id="Password" className="form-control " defaultValue="" placeholder="Enter your password" />
+                                    <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" name="Password" id="Password" className="form-control " placeholder="Enter your password" />
 
 
 
@@ -59,7 +88,7 @@ function AuthRegistration() {
                                         </div>
                                     </div>
 
-                                    <span className="field-validation-valid text-danger" data-valmsg-htmlhtmlFor="Password" data-valmsg-replace="true"></span>
+                                    <span className="field-validation-valid text-danger" data-valmsg-htmlhtmlfor="Password" data-valmsg-replace="true"></span>
                                 </div>
                             </div>
                             <div className="form-group">
@@ -69,11 +98,11 @@ function AuthRegistration() {
                                 </div>
                             </div>
                             <div className="form-group mb-0 text-center">
-                                <button className="btn btn-primary waves-effect waves-light btn-block" type="submit"> Sign Up </button>
+                                <button className="btn btn-primary waves-effect waves-light btn-block" onClick={RegisterSubmit}> Sign Up </button>
                             </div>
                             {/* social*/}
                             <AuthSocialButton></AuthSocialButton>
-                        </form>
+                        </div>
                         {/* end form*/}
                         {/* Footer*/}
                         <footer className="footer footer-alt">
@@ -88,7 +117,7 @@ function AuthRegistration() {
             <AuthQuotes></AuthQuotes>
             {/* end Auth fluid right content */}
         </div>
-    );
+    )
 }
 
 export default AuthRegistration;
