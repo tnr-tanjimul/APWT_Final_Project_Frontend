@@ -4,11 +4,16 @@ import AuthSocialButton from "../AuthSocialButton";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import React, {useState, userEffect} from "react";
-import  { Redirect } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 const AuthLogin = ()=>{
     let[token, setToken]= useState("");
     let[name, setName] = useState("");
     let[password, setPassword] =useState("");
+
+    let history = useHistory();
+    function handleRedirect() {
+        history.push("/");
+    }
 
     const loginSubmit= ()=>{
         var obj = {username: name, password: password};
@@ -18,11 +23,8 @@ const AuthLogin = ()=>{
             console.log(token);
             var user = {userId: token.userid, access_token:token.token};
             localStorage.setItem('user',JSON.stringify(user));
-
-            return <Redirect to='/'  />
-
-
-
+            handleRedirect();
+            
             // console.log(localStorage.getItem('user'));
         }).catch(err=>{
             console.log(err);

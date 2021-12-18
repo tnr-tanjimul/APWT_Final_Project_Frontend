@@ -5,15 +5,18 @@ import TopBar from "../TopBar";
 import BreadcrumbNav from "../BreadcrumbNav";
 import { Link } from "react-router-dom";
 
+
+
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 
-const HotspotUsersOnline = (props) => {
+const PPPOEUsersActive = (props) => {
     const [apiData, setApidata] = useState([]);
 
     useEffect(() => {
-        axios.get("hotspot/online")
+        axios.get("hotspot/users")
             .then(resp => {
                 console.log(resp.data);
                 setApidata(resp.data);
@@ -52,16 +55,13 @@ const HotspotUsersOnline = (props) => {
                                                         <th></th>
                                                         <th className="pointer" title="Click to sort">C.ID</th>
                                                         <th className="pointer" title="Click to sort">Name</th>
-                                                        
+                                                        <th className="pointer" title="Click to sort">Password</th>
                                                         <th className="pointer" title="Click to sort">Server</th>
-                                                        <th className="pointer" title="Click to sort">IP Address</th>
+                                                        <th className="pointer" title="Click to sort">Profile</th>
                                                         <th className="pointer" title="Click to sort">Mac Address</th>
-                                                       
-                                                       
                                                         <th className="pointer" title="Click to sort">Up time</th>
                                                         <th className="pointer" title="Click to sort">IN</th>
                                                         <th className="pointer" title="Click to sort">Out</th>
-                                                        <th className="pointer" title="Click to sort">Login By</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -71,19 +71,18 @@ const HotspotUsersOnline = (props) => {
                                                         apiData.map(p => (
                                                             <tr key={p.id}>
                                                                 <td>
-                                                                    <Link className="fa fa-minus-square text-danger pointer" to={"/hotspot/online/remove/"+p.serverId+"/"+p.user} title="Remove 01790381402"></Link>                                                                    
-                                                                   
+                                                                    <Link className="fa fa-minus-square text-danger pointer" to={"/hotspot/users/remove/"+p.id} title="Remove 01790381402"></Link>                                                                    
+                                                                    <Link className="fa fa-unlock pointer" to={"/hotspot/users/remove/"+p.id}></Link>
                                                                 </td>
                                                                 <td>{p.id}</td>
-                                                                <td>{p.user}</td>
-                                    
+                                                                <td>{p.name}</td>
+                                                                <td>{p.password}</td>
                                                                 <td>{p.serverName}</td>
-                                                                <td>{p.address}</td>
+                                                                <td>{p.profile}</td>
                                                                 <td>{p.macAddress}</td>
                                                                 <td>{p.uptime}</td>
                                                                 <td>{p.bytesIn}</td>
                                                                 <td>{p.bytesOut}</td>
-                                                                <td>{p.loginBy}</td>
                                                             </tr>
                                                         ))
                                                     }
@@ -118,4 +117,4 @@ const HotspotUsersOnline = (props) => {
     );
 }
 
-export default HotspotUsersOnline;
+export default PPPOEUsersActive;

@@ -9,11 +9,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 
-const HotspotUsersOnline = (props) => {
+const PPPOEUsersOnline = (props) => {
     const [apiData, setApidata] = useState([]);
 
     useEffect(() => {
-        axios.get("hotspot/online")
+        axios.get("pppoe/online")
             .then(resp => {
                 console.log(resp.data);
                 setApidata(resp.data);
@@ -118,4 +118,4 @@ const HotspotUsersOnline = (props) => {
     );
 }
 
-export default HotspotUsersOnline;
+export default PPPOEUsersOnline;

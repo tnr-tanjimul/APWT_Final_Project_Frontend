@@ -5,15 +5,18 @@ import TopBar from "../TopBar";
 import BreadcrumbNav from "../BreadcrumbNav";
 import { Link } from "react-router-dom";
 
+
+
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 
-const HotspotUsersOnline = (props) => {
+const PPPOEProfiles = (props) => {
     const [apiData, setApidata] = useState([]);
 
     useEffect(() => {
-        axios.get("hotspot/online")
+        axios.get("pppoe/profiles")
             .then(resp => {
                 console.log(resp.data);
                 setApidata(resp.data);
@@ -36,7 +39,7 @@ const HotspotUsersOnline = (props) => {
 
                             {/* start page title */}
 
-                            <BreadcrumbNav page="Active Users" title="Hotspot"></BreadcrumbNav>
+                            <BreadcrumbNav page="Profiles" title="PPPoE"></BreadcrumbNav>
 
                             <div className="row">
                                 <div className="col-12">
@@ -49,19 +52,14 @@ const HotspotUsersOnline = (props) => {
 
                                                 <thead>
                                                     <tr>
-                                                        <th></th>
-                                                        <th className="pointer" title="Click to sort">C.ID</th>
+                                                        <th className="pointer" title="Click to sort"></th>
                                                         <th className="pointer" title="Click to sort">Name</th>
-                                                        
                                                         <th className="pointer" title="Click to sort">Server</th>
-                                                        <th className="pointer" title="Click to sort">IP Address</th>
-                                                        <th className="pointer" title="Click to sort">Mac Address</th>
-                                                       
-                                                       
-                                                        <th className="pointer" title="Click to sort">Up time</th>
-                                                        <th className="pointer" title="Click to sort">IN</th>
-                                                        <th className="pointer" title="Click to sort">Out</th>
-                                                        <th className="pointer" title="Click to sort">Login By</th>
+                                                        <th className="pointer" title="Click to sort">Adrs Pool</th>
+                                                        <th className="pointer" title="Click to sort">Shared Users</th>
+                                                        <th className="pointer" title="Click to sort">Rate Limit</th>
+                                                        <th className="pointer" title="Click to sort">Validity</th>
+                                                        <th className="pointer" title="Click to sort">Price</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -71,19 +69,19 @@ const HotspotUsersOnline = (props) => {
                                                         apiData.map(p => (
                                                             <tr key={p.id}>
                                                                 <td>
-                                                                    <Link className="fa fa-minus-square text-danger pointer" to={"/hotspot/online/remove/"+p.serverId+"/"+p.user} title="Remove 01790381402"></Link>                                                                    
-                                                                   
+                                                                    <Link className="fa fa-minus-square text-danger pointer" to={"/pppoe/profiles/remove/" + p.serverId + "/" + p.name}></Link>
+
                                                                 </td>
-                                                                <td>{p.id}</td>
-                                                                <td>{p.user}</td>
-                                    
+                                                                <td>{p.name}</td>
+                                                                
+
                                                                 <td>{p.serverName}</td>
-                                                                <td>{p.address}</td>
-                                                                <td>{p.macAddress}</td>
-                                                                <td>{p.uptime}</td>
-                                                                <td>{p.bytesIn}</td>
-                                                                <td>{p.bytesOut}</td>
-                                                                <td>{p.loginBy}</td>
+                                                                <td>{p.remoteAddress}</td>
+                                                                <td>{p.onlyOne}</td>
+                                                                <td>{p.rateLimit}</td>
+                                                                <td>{p.validity}</td>
+                                                                <td>{p.price}</td>
+                                                                
                                                             </tr>
                                                         ))
                                                     }
@@ -118,4 +116,4 @@ const HotspotUsersOnline = (props) => {
     );
 }
 
-export default HotspotUsersOnline;
+export default PPPOEProfiles;
