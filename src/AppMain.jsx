@@ -16,6 +16,12 @@ import HotspotProfiles from "./Components/Pages/HotspotProfiles";
 import HotspotProfileRemove from "./Components/Pages/HotspotProfileRemove";
 import Logout from "./Components/Pages/Logout";
 import HotspotOnlineRemove from "./Components/Pages/HotspotOnlineRemove";
+import PPPOEUsers from "./Components/Pages/PPPOEUsers";
+import PPPOEUsersActive from "./Components/Pages/PPPOEUsersActive";
+import PPPOEUsersOnline from "./Components/Pages/PPPOEUsersOnline";
+import PPPOEProfiles from "./Components/Pages/PPPOEProfiles";
+import PPPOEProfileRemove from "./Components/Pages/PPPOEProfileRemove";
+import PPPPOEOnlineRemove from "./Components/Pages/PPPOEOnlineRemove";
 
 function AppMain() {
     return (
@@ -70,6 +76,30 @@ function AppMain() {
 
                         <Route exact path="/hotspot/profiles/remove/:serverId/:name">
                             <HotspotProfileRemove></HotspotProfileRemove>
+                        </Route>
+
+
+                        <Route exact path="/pppoe/users">
+                           <PPPOEUsers></PPPOEUsers>
+                        </Route>
+                        <Route exact path="/pppoe/active">
+                           <PPPOEUsersActive></PPPOEUsersActive>
+                        </Route>
+
+                        <Route exact path="/pppoe/online">
+                           <PPPOEUsersOnline></PPPOEUsersOnline>
+                        </Route>
+
+                        <Route exact path="/pppoe/online/remove/:serverId/:name">
+                            <PPPPOEOnlineRemove></PPPPOEOnlineRemove>
+                        </Route>
+
+                        <Route exact path="/pppoe/profiles">
+                           <PPPOEProfiles></PPPOEProfiles>
+                        </Route>
+
+                        <Route exact path="/pppoe/profiles/remove/:serverId/:name">
+                            <PPPOEProfileRemove></PPPOEProfileRemove>
                         </Route>
 
                         
