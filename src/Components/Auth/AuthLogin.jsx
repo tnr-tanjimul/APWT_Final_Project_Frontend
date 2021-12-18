@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import React, {useState, userEffect} from "react";
 import  { Redirect } from 'react-router-dom'
+import LoginRedirect from "../LoginRedirect";
 const AuthLogin = ()=>{
     let[token, setToken]= useState("");
     let[name, setName] = useState("");
@@ -19,9 +20,9 @@ const AuthLogin = ()=>{
             var user = {userId: token.userid, access_token:token.token};
             localStorage.setItem('user',JSON.stringify(user));
 
-            return <Redirect to='/'  />
+            //LoginRedirect();
 
-
+            this.history.push('/hotspot/users')
 
             // console.log(localStorage.getItem('user'));
         }).catch(err=>{

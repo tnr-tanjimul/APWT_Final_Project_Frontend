@@ -19,119 +19,153 @@ function SideMenu() {
                 </li>
 
                 <li>
-                    <a href="#h_group" data-toggle="collapse">
-                        <i className="mdi mdi-bullseye"></i>
-                        <span> Group </span>
+                    <a href="#client-billing" data-toggle="collapse">
+                        <i className="mdi mdi-account-cash"></i>
+                        <span> Billing </span>
                         <span className="menu-arrow"></span>
                     </a>
-                    <div className="collapse" id="h_group">
+                    <div className="collapse" id="client-billing">
                         <ul className="nav-second-level">
-                            <li> <Link to="/group">View</Link> </li>
-                            <li><Link to="/group/create">Create</Link></li>
+                            <li><Link to="/client-accounts">All Accounts</Link></li>
+                        </ul>
 
+                        <ul className="nav-second-level">
+                            <li><Link to="/client-invoices">Invoices</Link></li>
                         </ul>
                     </div>
-
                 </li>
 
 
+                <li className="menu-title mt-2">PPPoE</li>
+
                 <li>
-                    <a href="#h_contact" data-toggle="collapse">
+                    <a href="#pppoe1" data-toggle="collapse">
                         <i className="mdi mdi-account-multiple-outline"></i>
-                        <span> Contact </span>
+                        <span> Client </span>
                         <span className="menu-arrow"></span>
                     </a>
-                    <div className="collapse" id="h_contact">
+                    <div className="collapse" id="pppoe1">
                         <ul className="nav-second-level">
-                            <li> <Link to="/contact">View</Link> </li>
-                            <li><Link to="/contact/create">Create</Link></li>
-
+                            <li><Link to="pppoe-client-add">Add New</Link></li>
+                            <li> <Link to="pppoe-client-renew">Renew</Link></li>
                         </ul>
                     </div>
-
                 </li>
 
 
                 <li>
-                    <a href="#h_template" data-toggle="collapse">
-                        <i className="mdi mdi-view-dashboard-outline"></i>
-                        <span> Template </span>
+                    <a href="#pppoeSection" data-toggle="collapse">
+                        <i className="mdi mdi-bullseye"></i>
+                        <span> PPPoE </span>
                         <span className="menu-arrow"></span>
                     </a>
-                    <div className="collapse" id="h_template">
+                    <div className="collapse" id="pppoeSection">
                         <ul className="nav-second-level">
-                            <li> <Link to="/template">View</Link> </li>
-                            <li><Link to="/template/create">Create</Link></li>
-
+                            <li><Link to="/pppoe/users">All Users</Link></li>
+                            <li><Link to="/pppoe/active">Active Users</Link></li>
+                            <li><Link to="/pppoe/online">Online Users</Link></li>
+                            <li><Link to="/pppoe/profiles">Profiles</Link></li>
+                           
                         </ul>
                     </div>
-
                 </li>
 
 
-                <li>
-                    <Link to="/sender">
-                        <i className="fe-message-square mr-1"></i>
-                        <span> Sender </span>
-                    </Link>
-                </li>
 
+
+                <li className="menu-title mt-2">Hotspot</li>
 
                 <li>
-                    <Link to="/bulksender">
-                        <i className="mdi mdi-ballot-recount mr-1"></i>
-                        <span> Bulk Sender </span>
-                    </Link>
-                </li>
-
-
-                <li>
-                    <Link to="/messages">
-                        <i className="fe-bar-chart-line mr-1"></i>
-                        <span> Messeges </span>
-                    </Link>
-                </li>
-
-
-                <li>
-                    <a href="#h_user" data-toggle="collapse">
-                        <i className="mdi mdi-account-convert"></i>
-                        <span> User </span>
+                    <a href="#hotspot" data-toggle="collapse">
+                        <i className="mdi mdi-account-multiple-outline"></i>
+                        <span> Client </span>
                         <span className="menu-arrow"></span>
                     </a>
-                    <div className="collapse" id="h_user">
+                    <div className="collapse" id="hotspot">
                         <ul className="nav-second-level">
-                            <li> <Link to="/user">View</Link> </li>
-                            <li><Link to="/user/create">Create</Link></li>
-
+                            <li><Link to="/hotspot/client-add-retail">Add New</Link></li>
+                            <li> <Link to="/hotspot/client-renew">Renew</Link></li>
                         </ul>
                     </div>
-
                 </li>
 
 
+
+
+
+
+
+
                 <li>
-                    <a href="#h_SenderNumber" data-toggle="collapse">
+                    <a href="#sidebarIcons" data-toggle="collapse">
+                        <i className="mdi mdi-wifi"></i>
+                        <span> Hotspot </span>
+                        <span className="menu-arrow"></span>
+                    </a>
+                    <div className="collapse" id="sidebarIcons">
+                        <ul className="nav-second-level">
+
+
+                            <li><Link to="/hotspot/users">All Users</Link></li>
+                            <li><Link to="/hotspot/active">Active Users</Link></li>
+                            <li><Link to="/hotspot/online">Online Users</Link></li>
+                            <li><Link to="/hotspot/profiles">Profiles</Link></li>
+                            <li><Link to="/hotspot/log">Log</Link></li>
+                            <li><Link to="/hotspot/mac-log">Mac Log</Link></li>
+                            
+                        </ul>
+                    </div>
+                </li>
+
+
+
+                <li><Link to="/dhcp-leases">
+                    <i className="mdi mdi-ballot-recount"></i>
+                    <span> DHCP Leases </span>
+                </Link>
+                </li>
+
+                <li><Link to="traffic-monitor.php">
+                    <i className="mdi mdi-chart-areaspline"></i>
+                    <span> Traffic Monitor </span>
+                </Link></li>
+                <li className="menu-title mt-2">Configuration</li>
+
+                <li><Link to="retailer-add.php">
+                    <i className="mdi mdi-account-convert"></i>
+                    <span> Retailer </span>
+                </Link></li>
+                <li><Link to="merchant_payments.php">
+                    <i className="mdi mdi-credit-card-clock"></i>
+                    <span> All Payments </span>
+                </Link></li>
+
+                <li>
+                    <a href="#h_server" data-toggle="collapse">
                         <i className="fa fa-server"></i>
-                        <span> SenderNumber </span>
+                        <span> Server </span>
                         <span className="menu-arrow"></span>
                     </a>
-                    <div className="collapse" id="h_SenderNumber">
+                    <div className="collapse" id="h_server">
                         <ul className="nav-second-level">
-                            <li> <Link to="/sender-number">View</Link> </li>
-                            <li><Link to="/sender-number/create">Create</Link></li>
-
+                            <li><Link to="{{route('watchdog.index')}}">Watch Dog</Link></li>
+                            <li><Link to="{{route('server.index')}}">Mikrotik</Link></li>
                         </ul>
                     </div>
-
                 </li>
 
-
                 <li>
-                    <Link to="/admin" className="active">
-                        <i className="fe-message-square mr-1"></i>
-                        <span> Admin </span>
-                    </Link>
+                    <a href="#h_Configuration" data-toggle="collapse">
+                        <i className="fa fa-server"></i>
+                        <span> Configuration </span>
+                        <span className="menu-arrow"></span>
+                    </a>
+                    <div className="collapse" id="h_Configuration">
+                        <ul className="nav-second-level">
+                            <li><Link to="{{route('zone.index')}}">Zone</Link></li>
+                            <li><Link to="{{route('sub-zone.index')}}">Sub Zone</Link></li>
+                        </ul>
+                    </div>
                 </li>
 
 
