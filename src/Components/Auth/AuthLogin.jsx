@@ -17,7 +17,7 @@ const AuthLogin = ()=>{
 
     const loginSubmit= ()=>{
         var obj = {username: name, password: password};
-        axios.post("http://127.0.0.1:8000/api/login",obj)
+        axios.post("login",obj)
         .then(resp=>{
             var token = resp.data;
             console.log(token);
@@ -92,7 +92,7 @@ const AuthLogin = ()=>{
                         {/**{/* end form*/}
                         {/* Footer*/}
                         <footer className="footer footer-alt">
-                            <p className="text-muted">Don't have an account? <Link to="/Auth/Registration" className="text-muted ml-1"><b>Sign Up</b></Link></p>
+                            <p className="text-muted">Don't have an account? <Link to="/register" className="text-muted ml-1"><b>Sign Up</b></Link></p>
                         </footer>
 
                     </div> {/* end .card-body */}
