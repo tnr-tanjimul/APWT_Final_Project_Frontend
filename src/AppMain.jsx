@@ -1,5 +1,5 @@
 import Dashboard from "./Components/Pages/Dashboard";
-import { BrowserRouter as Router, Route, Switch,useParams } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, useParams } from 'react-router-dom'
 
 import AuthLogin from "./Components/Auth/AuthLogin";
 import AuthRegistration from "./Components/Auth/AuthRegistration";
@@ -41,166 +41,166 @@ function AppMain() {
         <Router>
             <>
                 {/* Begin page */}
-                
-                    
-
-
-                    <Switch>
-                        <Route exact path="/">
-                            <Dashboard></Dashboard>
-                        </Route>
-
-                       
-
-                        <Route exact path="/login">
-                            <AuthLogin></AuthLogin>
-                        </Route>
-
-                        <Route exact path="/logout">
-                            <Logout></Logout>
-                        </Route>
-
-
-                        <Route exact path="/register">
-                            <AuthRegistration></AuthRegistration>
-                        </Route>
-
-                        <Route exact path="/dhcp-leases">
-                           <DHCPLease></DHCPLease>
-                        </Route>
-                        <Route exact path="/hotspot/users">
-                           <HotspotUsers></HotspotUsers>
-                        </Route>
-                        <Route exact path="/hotspot/active">
-                           <HotspotUsersActive></HotspotUsersActive>
-                        </Route>
-
-                        <Route exact path="/hotspot/online">
-                           <HotspotUsersOnline></HotspotUsersOnline>
-                        </Route>
-
-                        <Route exact path="/hotspot/online/remove/:serverId/:name">
-                            <HotspotOnlineRemove></HotspotOnlineRemove>
-                        </Route>
-
-                        <Route exact path="/hotspot/profiles">
-                           <HotspotProfiles></HotspotProfiles>
-                        </Route>
-
-
-                        {/* Watch_Dog */}
-                        <Route exact path="/watchdog">
-                           <WatchDog/>
-                        </Route>
-                        <Route exact path="/watchdog/add">
-                           <AddWatchDog/>
-                        </Route>
-                        <Route exact path="/watchdog/edit/:id">
-                           <WatchDogEdit/>
-                        </Route>
-                        
-                        <Route exact path="/watchdog/view/:id">
-                           <WatchDogDetails/>
-                        </Route>
-                        
-                        <Route exact path="/watchdog/delete/:id">
-                           <WatchDogRemove/>
-                        </Route>
-                        
-                        {/* Mikrotik */}
-                        <Route exact path="/server">
-                           <Mikrotik/>
-                        </Route>
-                        <Route exact path="/server/delete/:id">
-                           <MikrotikRemove/>
-                        </Route>
-                        <Route exact path="/server/add">
-                           <AddMikrotik/>
-                        </Route>
-                        <Route exact path="/server/edit/:id">
-                           <MikrotikEdit/>
-                        </Route>
-
-                         {/* Mikrotik */}
-                         <Route exact path="/zone">
-                           <Zone></Zone>
-                        </Route>
-                        <Route exact path="/zone/delete/:id">
-                          <ZoneRemove></ZoneRemove>
-                        </Route>
-                        <Route exact path="/zone/add">
-                           <ZoneAdd></ZoneAdd>
-                        </Route>
-                        <Route exact path="/zone/edit/:id">
-                           <MikrotikEdit/>
-                        </Route>
-
-                        {/* Mikrotik */}
-                        <Route exact path="/sub-zone">
-                           <SubZone></SubZone>
-                        </Route>
-                        <Route exact path="/sub-zone/delete/:id">
-                          <SubZoneRemove></SubZoneRemove>
-                        </Route>
-                        <Route exact path="/sub-zone/add">
-                           <SubZoneAdd></SubZoneAdd>
-                        </Route>
-                        <Route exact path="/sub-zone/edit/:id">
-                           <MikrotikEdit/>
-                        </Route>
-
-
-                        <Route exact path="/company">
-                           <Company></Company>
-                        </Route>
-                        <Route exact path="/company/delete/:id">
-                          <CompanyRemove></CompanyRemove>
-                        </Route>
-                        <Route exact path="/company/add">
-                           <ZoneAdd></ZoneAdd>
-                        </Route>
-                        <Route exact path="/company/edit/:id">
-                           <MikrotikEdit/>
-                        </Route>
-
-                        <Route exact path="/hotspot/profiles/remove/:serverId/:name">
-                            <HotspotProfileRemove></HotspotProfileRemove>
-                        </Route>
-
-
-                        <Route exact path="/pppoe/users">
-                           <PPPOEUsers></PPPOEUsers>
-                        </Route>
-                        <Route exact path="/pppoe/active">
-                           <PPPOEUsersActive></PPPOEUsersActive>
-                        </Route>
-
-                        <Route exact path="/pppoe/online">
-                           <PPPOEUsersOnline></PPPOEUsersOnline>
-                        </Route>
-
-                        <Route exact path="/pppoe/online/remove/:serverId/:name">
-                            <PPPPOEOnlineRemove></PPPPOEOnlineRemove>
-                        </Route>
-
-                        <Route exact path="/pppoe/profiles">
-                           <PPPOEProfiles></PPPOEProfiles>
-                        </Route>
-
-                        <Route exact path="/pppoe/profiles/remove/:serverId/:name">
-                            <PPPOEProfileRemove></PPPOEProfileRemove>
-
-                        </Route>
-
-                        
-
-
-                    </Switch>
 
 
 
-                
-               
+
+                <Switch>
+                    <Route exact path="/">
+                        <Dashboard></Dashboard>
+                    </Route>
+
+
+
+                    <Route exact path="/login">
+                        <AuthLogin></AuthLogin>
+                    </Route>
+
+                    <Route exact path="/logout">
+                        <Logout></Logout>
+                    </Route>
+
+
+                    <Route exact path="/register">
+                        <AuthRegistration></AuthRegistration>
+                    </Route>
+
+                    <Route exact path="/dhcp-leases">
+                        <DHCPLease></DHCPLease>
+                    </Route>
+                    <Route exact path="/hotspot/users">
+                        <HotspotUsers></HotspotUsers>
+                    </Route>
+                    <Route exact path="/hotspot/active">
+                        <HotspotUsersActive></HotspotUsersActive>
+                    </Route>
+
+                    <Route exact path="/hotspot/online">
+                        <HotspotUsersOnline></HotspotUsersOnline>
+                    </Route>
+
+                    <Route exact path="/hotspot/online/remove/:serverId/:name">
+                        <HotspotOnlineRemove></HotspotOnlineRemove>
+                    </Route>
+
+                    <Route exact path="/hotspot/profiles">
+                        <HotspotProfiles></HotspotProfiles>
+                    </Route>
+
+
+                    {/* Watch_Dog */}
+                    <Route exact path="/watchdog">
+                        <WatchDog />
+                    </Route>
+                    <Route exact path="/watchdog/add">
+                        <AddWatchDog />
+                    </Route>
+                    <Route exact path="/watchdog/edit/:id">
+                        <WatchDogEdit />
+                    </Route>
+
+                    <Route exact path="/watchdog/view/:id">
+                        <WatchDogDetails />
+                    </Route>
+
+                    <Route exact path="/watchdog/delete/:id">
+                        <WatchDogRemove />
+                    </Route>
+
+                    {/* Mikrotik */}
+                    <Route exact path="/server">
+                        <Mikrotik />
+                    </Route>
+                    <Route exact path="/server/delete/:id">
+                        <MikrotikRemove />
+                    </Route>
+                    <Route exact path="/server/add">
+                        <AddMikrotik />
+                    </Route>
+                    <Route exact path="/server/edit/:id">
+                        <MikrotikEdit />
+                    </Route>
+
+                    {/* Mikrotik */}
+                    <Route exact path="/zone">
+                        <Zone></Zone>
+                    </Route>
+                    <Route exact path="/zone/delete/:id">
+                        <ZoneRemove></ZoneRemove>
+                    </Route>
+                    <Route exact path="/zone/add">
+                        <ZoneAdd></ZoneAdd>
+                    </Route>
+                    <Route exact path="/zone/edit/:id">
+                        <Zone></Zone>
+                    </Route>
+
+                    {/* Mikrotik */}
+                    <Route exact path="/sub-zone">
+                        <SubZone></SubZone>
+                    </Route>
+                    <Route exact path="/sub-zone/delete/:id">
+                        <SubZoneRemove></SubZoneRemove>
+                    </Route>
+                    <Route exact path="/sub-zone/add">
+                        <SubZoneAdd></SubZoneAdd>
+                    </Route>
+                    <Route exact path="/sub-zone/edit/:id">
+                        <SubZone></SubZone>
+                    </Route>
+
+
+                    <Route exact path="/company">
+                        <Company></Company>
+                    </Route>
+                    <Route exact path="/company/delete/:id">
+                        <CompanyRemove></CompanyRemove>
+                    </Route>
+                    <Route exact path="/company/add">
+                        <ZoneAdd></ZoneAdd>
+                    </Route>
+                    <Route exact path="/company/edit/:id">
+                        <MikrotikEdit />
+                    </Route>
+
+                    <Route exact path="/hotspot/profiles/remove/:serverId/:name">
+                        <HotspotProfileRemove></HotspotProfileRemove>
+                    </Route>
+
+
+                    <Route exact path="/pppoe/users">
+                        <PPPOEUsers></PPPOEUsers>
+                    </Route>
+                    <Route exact path="/pppoe/active">
+                        <PPPOEUsersActive></PPPOEUsersActive>
+                    </Route>
+
+                    <Route exact path="/pppoe/online">
+                        <PPPOEUsersOnline></PPPOEUsersOnline>
+                    </Route>
+
+                    <Route exact path="/pppoe/online/remove/:serverId/:name">
+                        <PPPPOEOnlineRemove></PPPPOEOnlineRemove>
+                    </Route>
+
+                    <Route exact path="/pppoe/profiles">
+                        <PPPOEProfiles></PPPOEProfiles>
+                    </Route>
+
+                    <Route exact path="/pppoe/profiles/remove/:serverId/:name">
+                        <PPPOEProfileRemove></PPPOEProfileRemove>
+
+                    </Route>
+
+
+
+
+                </Switch>
+
+
+
+
+
             </>
         </Router>
     );
